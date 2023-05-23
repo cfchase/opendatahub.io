@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkopendatahub_io=self.webpackChunkopendatahub_io||[]).push([[218],{2513:function(e,n,t){t.r(n),t.d(n,{Head:function(){return u}});var l=t(1883),a=t(7294);n.default=()=>a.createElement("main",null,a.createElement("h1",null,"Page not found"),a.createElement("p",null,a.createElement(l.Link,{to:"/"},"Go home")));const u=()=>a.createElement("title",null,"Not found")}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-a0c458265e964cc73f7d.js.map
