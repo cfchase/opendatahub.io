@@ -17,7 +17,7 @@ Launch Jupyter and start a notebook server to start working with your notebooks.
 
 . Click *Launch application*.
 +
-If you see *Error 403: Forbidden*, you are not in the default user group or the default administrator group for {productname-short}.
+If you see an *Access permission needed* message, you are not in the default user group or the default administrator group for {productname-short}.
 ifndef::upstream[]
 Contact your administrator so that they can add you to the correct group using link:{rhodsdocshome}{default-format-url}/managing_users_and_user_resources/adding-users-for-openshift-data-science_useradd[Adding users for OpenShift Data Science].
 endif::[]
@@ -72,9 +72,6 @@ After the server starts, you see one of the following behaviors:
 +
 The JupyterLab interface opens according to your selection.
 --
-+
-WARNING: You can be logged in to Jupyter for a maximum of 24 hours. After 24 hours, your user credentials expire, you are logged out of Jupyter, and your notebook server pod is stopped and deleted regardless of any work running in the notebook server. To help mitigate this, your administrator can configure OAuth tokens to expire after a set period of inactivity. See link:https://docs.openshift.com/container-platform/4.9/authentication/configuring-internal-oauth.html[Configuring the internal OAuth server] for more information.
-
 
 .Verification
 * The JupyterLab interface opens.
