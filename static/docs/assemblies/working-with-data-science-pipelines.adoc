@@ -13,10 +13,10 @@ As a data scientist, you can enhance your data science projects on {productname-
 For example, the steps in a machine learning workflow might include items such as data extraction, data processing, feature extraction, model training, model validation, and model serving. Automating these activities enables your organization to develop a continuous process of retraining and updating a model based on newly received data. This can help address challenges related to building an integrated machine learning deployment and continuously operating it in production.
 
 ifndef::upstream[]
-You can also use the Elyra JupyterLab extension to create and run data science pipelines within JupyterLab. For more information, see link:{rhodsdocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working-with-pipelines-in-jupyterlab[Working with pipelines in JupyterLab].
+You can also use the Elyra JupyterLab extension to create and run data science pipelines within JupyterLab. For more information, see link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working_with_pipelines_in_jupyterlab[Working with pipelines in JupyterLab].
 endif::[]
 ifdef::upstream[]
-You can also use the Elyra JupyterLab extension to create and run data science pipelines within JupyterLab. For more information, see link:{odhdocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working-with-pipelines-in-jupyterlab[Working with pipelines in JupyterLab].
+You can also use the Elyra JupyterLab extension to create and run data science pipelines within JupyterLab. For more information, see link:{odhdocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working_with_pipelines_in_jupyterlab[Working with pipelines in JupyterLab].
 endif::[]
 
 A data science pipeline in {productname-short} consists of the following components:
@@ -38,7 +38,7 @@ ifndef::upstream[]
 Before you can use data science pipelines, you must install the OpenShift Pipelines operator. For more information about installing a compatible version of the OpenShift Pipelines operator, see link:https://access.redhat.com/documentation/en-us/openshift_container_platform/{ocp-latest-version}/html/cicd/pipelines#op-release-notes[{org-name} OpenShift Pipelines release notes] and link:https://access.redhat.com/articles/6986416[{productname-long}: Supported Configurations].
 endif::[]
 
-You can store your pipeline artifacts in an Amazon Web Services (AWS) Simple Storage Service (S3) bucket so that you do not consume local storage. To do this, you must first configure write access to your S3 bucket on your AWS account.
+You can store your pipeline artifacts in an S3-compatible object storage bucket so that you do not consume local storage. To do this, you must first configure write access to your S3 bucket on your storage account.
 
 == Managing data science pipelines
 
@@ -112,10 +112,10 @@ include::modules/exporting-a-pipeline-in-jupyterlab.adoc[leveloffset=+2]
 == Additional resources
 * link:https://www.kubeflow.org/docs/components/pipelines/v1/[Kubeflow Pipelines v1 Documentation]
 ifndef::upstream[]
-* link:{rhodsdocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working-with-pipelines-in-jupyterlab[Working with pipelines in JupyterLab].
+* link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working_with_pipelines_in_jupyterlab[Working with pipelines in JupyterLab].
 endif::[]
 ifdef::upstream[]
-link:{odhdocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working-with-pipelines-in-jupyterlab[Working with pipelines in JupyterLab].
+link:{odhdocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines#working_with_pipelines_in_jupyterlab[Working with pipelines in JupyterLab].
 endif::[]
 
 ifdef::parent-context[:context: {parent-context}]

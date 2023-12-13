@@ -9,10 +9,10 @@ To change the level of collaboration on your data science project, you can updat
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, `rhods-users` or `rhods-admins`) in OpenShift.
+* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, `odh-users` or `odh-admins`) in OpenShift.
+* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have created a data science project.
 * You have previously shared access to your project with other users or groups.
@@ -33,7 +33,7 @@ The *Permissions* page for the project opens.
 .. From the *Permissions* list, update the user access permissions by selecting one of the following:
 * Admin: Users with this access level can edit project details and manage access to the project.
 * Edit: Users with this access level can view and edit project components, such as its workbenches, data connections, and storage.
-.. To confirm the update to the entry, click *Confirm* (image:images/rhods-confirm-entry-icon.png[The Confirm icon]).
+.. To confirm the update to the entry, click *Confirm* (image:images/rhoai-confirm-entry-icon.png[The Confirm icon]).
 . Update the OpenShift groups access permissions to the project.
 .. From the *Name* list, update the group that has access to the project by selecting another group from the list.
 +
@@ -52,7 +52,7 @@ endif::[]
 .. From the *Permissions* list, update the group access permissions by selecting one of the following:
 * Admin: Groups with this access permission level can edit project details and manage access to the project.
 * Edit: Groups with this access permission level can view and edit project components, such as its workbenches, data connections, and storage.
-.. To confirm the update to the entry, click *Confirm* (image:images/rhods-confirm-entry-icon.png[The Confirm icon]).
+.. To confirm the update to the entry, click *Confirm* (image:images/rhoai-confirm-entry-icon.png[The Confirm icon]).
 
 .Verification
 * The *Users* and *Groups* sections on the *Permissions* tab show the respective users and groups whose project access permissions you changed.

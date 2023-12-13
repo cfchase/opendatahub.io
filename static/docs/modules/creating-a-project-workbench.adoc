@@ -4,15 +4,15 @@
 = Creating a project workbench
 
 [role='_abstract']
-To examine and work with data models in an isolated area, you can create a workbench. You can use this workbench to create a Jupyter notebook from an existing notebook container image to access its resources and properties. For data science projects that require data retention, you can add container storage to the workbench you are creating. If you require extra power for use with large datasets, you can assign accelerators to your workbench to optimize performance. 
+To examine and work with models in an isolated area, you can create a workbench. You can use this workbench to create a Jupyter notebook from an existing notebook container image to access its resources and properties. For data science projects that require data retention, you can add container storage to the workbench you are creating. If you require extra power for use with large datasets, you can assign accelerators to your workbench to optimize performance. 
 
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you use specialized {productname-short} groups, you are part of the user group or admin group (for example, `rhods-users` or `rhods-admin` ) in OpenShift.
+* If you use specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group} ) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you use specialized {productname-short} groups, you are part of the user group or admin group (for example, `odh-users` or `odh-admins`) in OpenShift.
+* If you use specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have created a data science project that you can add a workbench to.
 
@@ -61,11 +61,11 @@ endif::[]
 * Create a new data connection as follows:
 ... Select *Create new data connection*.
 ... In the *Name* field, enter a unique name for the data connection.
-... In the *Access key* field, enter your access key ID for Amazon Web Services (AWS).
-... In the *Secret key* field, enter your secret access key for the AWS account that you specified.
-... In the *Endpoint* field, enter the endpoint of your AWS S3 storage.
-... In the *Region* field, enter the default region of your AWS account.
-... In the *Bucket* field, enter the name of the AWS S3 bucket.
+... In the *Access key* field, enter the access key ID for the S3-compatible object storage provider.
+... In the *Secret key* field, enter the secret access key for the S3-compatible object storage account that you specified.
+... In the *Endpoint* field, enter the endpoint of your S3-compatible object storage bucket.
+... In the *Region* field, enter the default region of your S3-compatible object storage account.
+... In the *Bucket* field, enter the name of your S3-compatible object storage bucket.
 
 * Use an existing data connection as follows:
 ... Select *Use existing data connection*.

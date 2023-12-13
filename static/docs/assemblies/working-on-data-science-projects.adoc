@@ -17,7 +17,7 @@ Data connections:: Adding a data connection to your project allows you to connec
 Models and model servers:: Deploy a trained data science model to serve intelligent applications. Your model is deployed with an endpoint that allows applications to send requests to the model.
 
 ifdef::managed[]
-Model serving is currently available as a Field Trial feature. For more information on the scope of Field Trial status, see link:https://access.redhat.com/support/policy/updates/rhods/service[OpenShift Data Science Service Definition].
+Model serving is currently available as a Field Trial feature. For more information on the scope of Field Trial status, see link:https://access.redhat.com/support/policy/updates/rhoai/service[OpenShift AI Service Definition].
 endif::[]
 ifdef::self-managed[]
 Model serving is currently available as a Technology Preview. For further information on the scope of Technology Preview status, and the associated support implications, refer to link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope].
@@ -32,7 +32,7 @@ To classify your OpenShift project as a data science project, and to make availa
 
 //[IMPORTANT]
 //====
-//OpenShift Data Science sends notifications to nominated email addresses (usually your administrator) when the storage for your notebook server is 90% full, and again when it is completely full.
+//OpenShift AI sends notifications to nominated email addresses (usually your administrator) when the storage for your notebook server is 90% full, and again when it is completely full.
 
 //If you download a very large data set, your storage can fill up before your administrator receives a notification, so you might run out of room before your administrator can give you more storage.
 
@@ -80,16 +80,6 @@ include::modules/deleting-cluster-storage-from-a-data-science-project.adoc[level
 //include::modules/defining-a-pipeline.adoc[leveloffset=+2]
 
 //include::modules/importing-a-data-science-pipeline.adoc[leveloffset=+2]
-
-== Configuring model servers
-
-include::modules/adding-a-model-server-to-your-data-science-project.adoc[leveloffset=+2]
-
-include::modules/adding-a-custom-model-serving-runtime.adoc[leveloffset=+2]
-
-include::modules/updating-a-model-server.adoc[leveloffset=+2]
-
-include::modules/deleting-a-model-server.adoc[leveloffset=+2]
 
 == Configuring access to data science projects
 

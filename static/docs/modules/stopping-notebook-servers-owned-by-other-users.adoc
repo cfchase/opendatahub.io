@@ -7,7 +7,7 @@
 Administrators can stop notebook servers that are owned by other users to reduce resource consumption on the cluster, or as part of removing a user and their resources from the cluster.
 
 .Prerequisites
-* If you are using specialized {productname-short} groups, you are part of the administrator group (for example, `rhods-admins`). If you are not using specialized groups, you are part of the {openshift-platform} administrator group. 
+* If you are using specialized {productname-short} groups, you are part of the administrator group (for example, `{oai-admin-group}`). If you are not using specialized groups, you are part of the {openshift-platform} administrator group. 
 
 ifdef::upstream[]
 * You have launched the Jupyter application, as described in link:{odhdocshome}/getting-started-with-open-data-hub/#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server].
@@ -15,13 +15,8 @@ endif::[]
 
 ifndef::upstream[]
 
-* See link:{rhodsdocshome}{default-format-url}/installing_and_uninstalling_{url-productname-short}/adding-administrative-users-for-{openshift-platform-url}_install[Adding administrative users for {openshift-platform}] for more information.
-ifdef::self-managed[]
-* You have launched the Jupyter application, as described in link:{rhodsdocshome}{default-format-url}/getting_started_with_red_hat_openshift_data_science_self-managed/creating-a-project-workbench_get-started#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server].
-endif::[]
-ifndef::self-managed[]
-* You have launched the Jupyter application, as described in link:{rhodsdocshome}{default-format-url}/getting_started_with_red_hat_openshift_data_science/creating-a-project-workbench_get-started#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server].
-endif::[]
+* See link:{rhoaidocshome}{default-format-url}/installing_and_uninstalling_{url-productname-short}/adding-administrative-users-for-{openshift-platform-url}_install[Adding administrative users for {openshift-platform}] for more information.
+* You have launched the Jupyter application, as described in link:{rhoaidocshome}{default-format-url}/getting_started_with_{url-productname-long}/creating-a-project-workbench_get-started#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server].
 endif::[]
 
 * The notebook server that you want to stop is running.

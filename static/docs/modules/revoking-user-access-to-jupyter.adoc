@@ -16,13 +16,13 @@ endif::[]
 ifdef::self-managed[]
 * You are assigned the `cluster-admin` role in {openshift-platform}.
 endif::[]
-* If you are using specialized {productname-short} user groups, the user is part of the {productname-short} user group, administrator group, or both.
+* If you are using specialized user groups for {productname-short}, the user is part of the user group, administrator group, or both.
 
 .Procedure
 . In the {openshift-platform} web console, click *User Management* -> *Groups*.
 . Click the name of the group that you want to remove the user from.
-** For administrative users, click the name of your administrator group, for example, `rhods-admins`.
-** For normal users, click the name of your user group, for example, `rhods-users`.
+** For administrative users, click the name of your administrator group, for example, {oai-admin-group}.
+** For normal users, click the name of your user group, for example, {oai-user-group}.
 
 +
 The *Group details* page for the group appears.

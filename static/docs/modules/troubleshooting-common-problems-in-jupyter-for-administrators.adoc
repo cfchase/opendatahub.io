@@ -13,7 +13,7 @@ endif::[]
 == A user receives a *404: Page not found* error when logging in to Jupyter
 
 .Problem
-If you have configured specialized {productname-short} user groups, the user name might not be added to the default user group for {productname-short}.
+If you have configured specialized user groups for {productname-short}, the user name might not be added to the default user group for {productname-short}.
 
 .Diagnosis
 Check whether the user is part of the default user group.
@@ -28,7 +28,7 @@ ifdef::upstream[]
 .. Log in to {productname-short} web console.
 endif::[]
 .. Click *User Management* -> *Groups*.
-.. Click the name of your user group, for example, `rhods-users`.
+.. Click the name of your user group, for example, `{oai-user-group}`.
 +
 The *Group details* page for that group appears.
 
@@ -36,7 +36,7 @@ The *Group details* page for that group appears.
 
 .Resolution
 ifndef::upstream[]
-* If the user is not added to any of the groups with permission access to Jupyter, follow link:{rhodsdocshome}{default-format-url}/managing_users/adding-users_user-mgmt[Adding users] to add them.
+* If the user is not added to any of the groups with permission access to Jupyter, follow link:{rhoaidocshome}{default-format-url}/managing_users/adding-users_user-mgmt[Adding users] to add them.
 * If the user is already added to a group with permission to access Jupyter, contact {org-name} Support.
 endif::[]
 

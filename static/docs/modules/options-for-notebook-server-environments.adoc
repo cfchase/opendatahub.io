@@ -21,7 +21,10 @@ ifndef::upstream[]
 --
 Notebook images are supported for a minimum of one year. Major updates to preconfigured notebook images occur about every six months. Therefore, two supported notebook image versions are typically available at any given time. Legacy notebook image versions, that is, not the two most recent versions, might still be available for selection. Legacy image versions include a label that indicates the image is out-of-date. 
 
-Version 1.2 of notebook images available in {productname-short} 2.4 will no longer be supported in {productname-short} 2.5. To use the latest package versions, {org-name} recommends that you use the most recently added notebook image.
+From {productname-short} 2.5, version 1.2 of notebook images is no longer supported. Notebooks that are already running on version 1.2 of an image will continue to work normally, but it is not available to select for new users or notebooks. 
+
+To use the latest package versions, {org-name} recommends that you use the most recently added notebook image.
+
 --
 endif::[]
 +
@@ -74,7 +77,7 @@ a| * Python 3.8
 a| * CUDA 11.8
 * Python 3.9
 * PyTorch 2.0
-* JupyterLab 3.5
+* JupyterLab 3.6
 * Notebook 6.5
 * TensorBoard 2.13
 * Boto3 1.28
@@ -87,7 +90,7 @@ a| * CUDA 11.8
 * SciPy 1.11
 * Elyra 3.15
 * PyMongo 4.5 
-* Pyobc 4.0 
+* Pyodbc 4.0 
 * Codeflare-SDK 0.12
 * Sklearn-onnx 1.15
 * Psycopg 3.1 
@@ -128,7 +131,7 @@ a| * CUDA 11.4
 .3+| Standard Data Science
 | 2023.2 (Recommended)
 a| * Python 3.9
-* JupyterLab 3.5
+* JupyterLab 3.6
 * Notebook 6.5
 * Boto3 1.28
 * Kafka-Python 2.0
@@ -140,7 +143,7 @@ a| * Python 3.9
 * SciPy 1.11
 * Elyra 3.15
 * PyMongo 4.5 
-* Pyobc 4.0 
+* Pyodbc 4.0 
 * Codeflare-SDK 0.12
 * Sklearn-onnx 1.15
 * Psycopg 3.1 
@@ -176,7 +179,7 @@ a| * Python 3.8
 | 2023.2 (Recommended)
 a| * CUDA 11.8
 * Python 3.9
-* JupyterLab 3.5
+* JupyterLab 3.6
 * Notebook 6.5
 * TensorFlow 2.13
 * TensorBoard 2.13
@@ -190,7 +193,7 @@ a| * CUDA 11.8
 * SciPy 1.11
 * Elyra 3.15
 * PyMongo 4.5 
-* Pyobc 4.0 
+* Pyodbc 4.0 
 * Codeflare-SDK 0.12
 * Sklearn-onnx 1.15
 * Psycopg 3.1 
@@ -231,7 +234,7 @@ a| * CUDA 11.4
 .2+| TrustyAI
 | 2023.2 (Recommended)
 a| * Python 3.9
-* JupyterLab 3.5
+* JupyterLab 3.6
 * Notebook 6.5
 * TrustyAI 0.3
 * Boto3 1.28
@@ -244,7 +247,7 @@ a| * Python 3.9
 * SciPy 1.11
 * Elyra 3.15
 * PyMongo 4.5 
-* Pyobc 4.0 
+* Pyodbc 4.0 
 * Codeflare-SDK 0.12
 * Sklearn-onnx 1.15
 * Psycopg 3.1 
@@ -269,6 +272,7 @@ a| * Python 3.9
 | 2023.2 (Recommended)
 a| * Python 3.8
 * Habana 1.10
+* JupyterLab 3.5
 * TensorFlow 2.12
 * Boto3 1.26
 * Kafka-Python 2.0
@@ -297,7 +301,7 @@ ifdef::upstream[]
 Using accelerators is only supported with specific notebook images. For GPUs, only the PyTorch, TensorFlow, and CUDA notebook images are supported. For Habana Gaudi devices, only the HabanaAI notebook image is supported. In addition, you can only specify the number of accelerators required for your notebook server if accelerators are enabled on your cluster.
 endif::[]
 ifndef::upstream[]
-Using accelerators is only supported with specific notebook images. For GPUs, only the PyTorch, TensorFlow, and CUDA notebook images are supported. For Habana Gaudi devices, only the HabanaAI notebook image is supported. In addition, you can only specify the number of accelerators required for your notebook server if accelerators are enabled on your cluster. To learn how to enable GPU support, see link:{rhodsdocshome}{default-format-url}/managing_resources/managing-cluster-resources_cluster-mgmt#enabling-gpu-support_cluster-mgmt[Enabling GPU support in {productname-short}].
+Using accelerators is only supported with specific notebook images. For GPUs, only the PyTorch, TensorFlow, and CUDA notebook images are supported. For Habana Gaudi devices, only the HabanaAI notebook image is supported. In addition, you can only specify the number of accelerators required for your notebook server if accelerators are enabled on your cluster. To learn how to enable GPU support, see link:{rhoaidocshome}{default-format-url}/managing_resources/managing-cluster-resources_cluster-mgmt#enabling-gpu-support_cluster-mgmt[Enabling GPU support in {productname-short}].
 endif::[]
 --
 
@@ -321,5 +325,5 @@ ifdef::upstream[]
 * link:{odhdocshome}/getting-started-with-open-data-hub/#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server]
 endif::[]
 ifndef::upstream[]
-* link:{rhodsdocshome}{default-format-url}/getting_started_with_{url-productname-long}/creating-a-project-workbench_get-started#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server]
+* link:{rhoaidocshome}{default-format-url}/getting_started_with_{url-productname-long}/creating-a-project-workbench_get-started#launching-jupyter-and-starting-a-notebook-server_get-started[Launching Jupyter and starting a notebook server]
 endif::[]
