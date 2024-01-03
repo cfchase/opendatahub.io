@@ -7,7 +7,7 @@ ifndef::upstream[]
 [IMPORTANT]
 ====
 The TrustyAI features are for Technology Preview only. Technology Preview features are not supported with {org-name} production service level agreements (SLAs), might not be functionally complete, and {org-name} does not recommend using them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process. 			
-For more information on {org-name} Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/ [Technology Preview Features Scope]. 		
+For more information on {org-name} Technology Preview features, see link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Scope]. 		
 ====
 endif::[]
 
@@ -17,7 +17,7 @@ When you configure your model for bias monitoring, you can use the {productname-
 .Prerequisite
 
 ifndef::upstream[]
-* You configured bias metrics for your model as described in link:{rhoaidocshome}{default-format-url}/monitoring-data-science-models/monitoring-models-for-bias#configuring-bias-monitoring-for-a-model-cli_bias-monitoring[Configuring bias monitoring for a model].
+* You configured bias metrics for your model as described in link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/monitoring-models-for-bias_bias-monitoring#configuring-bias-monitoring-for-a-model-cli_bias-monitoring[Configuring bias monitoring for a model].
 
 endif::[]
 ifdef::upstream[]
