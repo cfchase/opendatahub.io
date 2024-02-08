@@ -4,29 +4,33 @@
 = Viewing a deployed model
 
 [role='_abstract']
-To analyse the results of your work, you can view a list of deployed models on {productname-long}. You can also view the current statuses of deployed models and their endpoints.
+To analyze the results of your work, you can view a list of deployed models on {productname-long}. You can also view the current statuses of deployed models and their endpoints.
 
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, `{oai-user-group}`) in OpenShift.
+* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group}) in OpenShift.
+* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
-* There are active and deployed data science models available on the *Model Serving* page.
 
 .Procedure
 . From the {productname-short} dashboard, click *Model Serving*.
 +
-The *Model Serving* page opens.
-. Review the list of deployed models.
+The *Deployed models* page opens.
 +
-Inference endpoints are displayed in the *Inference endpoint* column in the *Deployed models* table.
-. Optional: Click the *Copy* button (image:images/osd-copy.png[]) on the relevant row to copy the model's inference endpoint to the clipboard.
+For each model, the page shows details such as the model name, the project in which the model is deployed, the serving runtime that the model uses, and the deployment status.
+. Optional: For a given model, click the link in the *Inference endpoint* column to see the inference endpoints for the deployed model.
 
 .Verification
-* A list of previously deployed data science models is displayed on the *Model Serving* page.
+* A list of previously deployed data science models is displayed on the *Deployed models* page.
 
-//[role='_additional-resources']
-//.Additional resources
+[role='_additional-resources']
+.Additional resources
+ifndef::upstream[]
+* To learn how to monitor your model for bias, see link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/index[Monitoring data science models].
+endif::[]
+ifdef::upstream[]
+* To learn how to monitor your model for bias, see link:{odhdocshome}/monitoring-data-science-models[Monitoring data science models].
+endif::[]

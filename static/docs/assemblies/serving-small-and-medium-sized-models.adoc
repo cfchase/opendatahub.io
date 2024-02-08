@@ -1,0 +1,34 @@
+:_module-type: ASSEMBLY
+
+ifdef::context[:parent-context: {context}]
+
+:context: model-serving
+
+[id="serving-small-and-medium-sized-models_{context}"]
+= Serving small and medium-sized models
+
+[role='_abstract']
+On the multi-model serving platform, multiple models can be deployed from the same model server and share the server resources.
+
+== Configuring model servers
+include::modules/enabling-the-multi-model-serving-platform.adoc[leveloffset=+2]
+include::modules/adding-a-custom-model-serving-runtime-for-the-multi-model-serving-platform.adoc[leveloffset=+2]
+include::modules/adding-a-model-server-for-the-multi-model-serving-platform.adoc[leveloffset=+2]
+include::modules/deleting-a-model-server.adoc[leveloffset=+2]
+
+== Working with deployed models
+include::modules/deploying-a-model-using-the-multi-model-serving-platform.adoc[leveloffset=+2]
+include::modules/viewing-a-deployed-model.adoc[leveloffset=+2]
+include::modules/updating-the-deployment-properties-of-a-deployed-model.adoc[leveloffset=+2]
+include::modules/deleting-a-deployed-model.adoc[leveloffset=+2]
+
+== Monitoring deployed models
+include::modules/viewing-performance-metrics-for-model-server.adoc[leveloffset=+2]
+include::modules/viewing-http-request-metrics-for-a-deployed-model.adoc[leveloffset=+2]
+
+// [role='_additional-resources']
+// == Additional resources
+// *
+
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]

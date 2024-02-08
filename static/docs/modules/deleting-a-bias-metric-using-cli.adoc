@@ -1,0 +1,52 @@
+:_module-type: PROCEDURE
+
+[id='deleting-a-bias-metric-using-cli_{context}']
+= Deleting a bias metric by using the CLI
+
+[role='_abstract']
+The following procedure describes how to use the OpenShift command-line interface (CLI) to delete a bias metric for a model.
+
+.Prerequisites
+
+* You have logged in to {productname-long}.
+
+* There is an existing bias metric that you want to delete.
+
+ifndef::upstream[]
+* You have a user token for authentication as described in link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/authenticating-trustyai-service_monitor[Authenticating the TrustyAI service].
+endif::[]
+ifdef::upstream[]
+* You have a user token for authentication as described in link:{odhdocshome}/monitoring-data-science-models/#authenticating-trustyai-service_monitor[Authenticating the TrustyAI service].
+endif::[]
+
+.Procedure
+
+. In a terminal window, log in to the OpenShift cluster where {productname-short} is deployed.
++
+----
+oc login
+----
+
+.  Optional: To list all currently active requests for a metric, use `GET /metrics/{{metric}}/requests`. For example, to list all currently scheduled SPD metrics, type:
++
+----
+curl -H "Authorization: Bearer $TOKEN" -X GET --location "$TRUSTY_ROUTE/metrics/spd/requests"
+----
+
+. To delete a metric, send an HTTP `DELETE` request to the `/metrics/$METRIC/request` endpoint to stop the periodic calculation, including the id of periodic task that you want to cancel in the payload. For example:
++
+----
+curl -H "Authorization: Bearer $TOKEN" -X DELETE --location "$TRUSTY_ROUTE/metrics/spd/request" \
+    -H "Content-Type: application/json" \
+    -d "{
+          \"requestId\": \"3281c891-e2a5-4eb3-b05d-7f3831acbb56\"
+        }"
+----
+
+.Verification
+Use `GET /metrics/{{metric}}/requests` to list all currently active requests for the metric and verify the metric that you deleted is not shown. For example:
+
+----
+curl -H "Authorization: Bearer $TOKEN" -X GET --location "$TRUSTY_ROUTE/metrics/spd/requests"
+----
+

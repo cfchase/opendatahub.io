@@ -9,10 +9,10 @@ You can update the deployment properties of a model that has been deployed previ
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, `{oai-user-group}`) in OpenShift.
+* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group}) in OpenShift.
+* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have deployed a model on {productname-short}.
 
@@ -33,7 +33,7 @@ NOTE: The *Model framework* list shows only the frameworks that are supported by
 +
 --
 * *If you previously specified an existing data connection*
-... In the *Folder path* field, update the folder path that contains the model in your specified data source.
+... In the *Path* field, update the folder path that contains the model in your specified data source.
 
 * *If you previously specified a new data connection*
 ... In the *Name* field, update a unique name for the data connection.
@@ -42,10 +42,10 @@ NOTE: The *Model framework* list shows only the frameworks that are supported by
 ... In the *Endpoint* field, update the endpoint of your S3-compatible object storage bucket.
 ... In the *Region* field, update the default region of your S3-compatible object storage account.
 ... In the *Bucket* field, update the name of your S3-compatible object storage bucket.
-... In the *Folder path* field, update the folder path in your S3-compatible object storage that contains your data file. 
+... In the *Path* field, update the folder path in your S3-compatible object storage that contains your data file. 
 --
 
-.. Click *Configure*.
+.. Click *Deploy*.
 
 .Verification
 * The model whose deployment properties you updated is displayed on the *Model Serving* page.
