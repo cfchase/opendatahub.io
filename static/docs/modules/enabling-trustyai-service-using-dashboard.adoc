@@ -45,7 +45,7 @@ ifdef::self-managed[]
 * You have installed {productname-short} as described in link:{rhoaidocshome}{default-format-url}/installing_and_uninstalling_{url-productname-short}/installing-the-openshift-data-science-operator_operator-install[Installing the {productname-long} Operator].
 endif::[]
 
-ifndef::self-managed[]
+ifdef::cloud-service[]
 * You have installed {productname-short} as described in link:{rhoaidocshome}{default-format-url}/installing_and_uninstalling_{url-productname-short}/installing-openshift-ai-managed_install[Installing OpenShift AI on your OpenShift cluster].
 endif::[]
 
@@ -81,7 +81,7 @@ endif::[]
 . From the {productname-short} dashboard, click *Data Science Projects*.
 . In the *Data Science Projects* page, click the name of the project that contains (or will contain) the models that the data scientist wants to monitor.
 . In the project details, page, click *Settings*.
-. Select the *Enable TrustyAI* checkbox.
+. Select the *Enable model bias monitoring* checkbox.
 
 .Verification
 . In the {openshift-platform} web console, click *Workloads* → *Pods*.
