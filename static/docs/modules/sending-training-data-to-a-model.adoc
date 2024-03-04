@@ -26,14 +26,19 @@ endif::[]
 .Verification
 Follow these steps to view cluster metrics and verify that TrustyAI is receiving data. 
 
+ifdef::upstream,self-managed[]
 . Log in to the {openshift-platform} web console.
+endif::[[]
+ifdef::cloud-service[]
+. Log in to the OpenShift web console.
+endif::[]
 . Switch to the *Administrator* perspective.
 . In navigation menu, click *Observe* -> *Metrics*.
 . On the *Metrics* page, in the *Expression* field, enter `trustyai_model_observations_total` and then click *Run queries*. Your model should be listed and reporting observed inferences.
 . Optional: Select a refresh interval from the list in the upper-right corner. For example, select *15 seconds*. 
 . Optional: Select a time range from the list above the graph. For example, select *5m*.
 
-ifndef::upstream[]
+ifdef::upstream[]
 .Next step
-link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/configuring-bias-metrics-for-a-model_bias-monitoring[Configuring bias metrics for a model]
+link:{odhdocshome}/monitoring-data-science-models/#configuring-bias-metrics-for-a-model_bias-monitoring[Configuring bias metrics for a model]
 endif::[]

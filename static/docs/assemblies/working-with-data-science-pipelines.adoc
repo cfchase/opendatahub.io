@@ -48,7 +48,7 @@ include::modules/defining-a-pipeline.adoc[leveloffset=+2]
 
 include::modules/importing-a-data-science-pipeline.adoc[leveloffset=+2]
 
-include::modules/downloading-a-data-science-pipeline.adoc[leveloffset=+2]
+include::modules/downloading-a-data-science-pipeline-version.adoc[leveloffset=+2]
 
 include::modules/deleting-a-data-science-pipeline.adoc[leveloffset=+2]
 
@@ -73,7 +73,7 @@ include::modules/scheduling-a-pipeline-run.adoc[leveloffset=+2]
 
 //include::modules/deleting-a-pipeline-experiment.adoc[leveloffset=+2] 
 
-include::modules/cloning-a-scheduled-pipeline-run.adoc[leveloffset=+2]
+include::modules/duplicating-a-scheduled-pipeline-run.adoc[leveloffset=+2]
 
 include::modules/stopping-a-triggered-pipeline-run.adoc[leveloffset=+2]
 
@@ -86,6 +86,13 @@ include::modules/viewing-scheduled-pipeline-runs.adoc[leveloffset=+2]
 include::modules/viewing-triggered-pipeline-runs.adoc[leveloffset=+2]
 
 include::modules/viewing-the-details-of-a-pipeline-run.adoc[leveloffset=+2]
+
+include::modules/about-pipeline-logs.adoc[leveloffset=+2]
+
+include::modules/viewing-pipeline-step-logs.adoc[leveloffset=+2]
+
+include::modules/downloading-pipeline-step-logs.adoc[leveloffset=+2]
+
 
 == Working with pipelines in JupyterLab
 
