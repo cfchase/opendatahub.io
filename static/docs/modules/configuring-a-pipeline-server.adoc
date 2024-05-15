@@ -4,15 +4,37 @@
 = Configuring a pipeline server
 
 [role='_abstract']
-Before you can successfully create a pipeline in {productname-short}, you must configure a pipeline server. This includes configuring where your pipeline artifacts and data are stored.
+Before you can successfully create a pipeline in {productname-short}, you must configure a pipeline server. This task includes configuring where your pipeline artifacts and data are stored.
 
 [NOTE]
 ====
-After the pipeline server is created, the `/metadata` and `/artifacts` folders are automatically created in the default `root` folder. Therefore, you are not required to specify any storage directories when configuring a data connection for your pipeline server.
+You are not required to specify any storage directories when configuring a data connection for your pipeline server. When you import a pipeline, the `/pipelines` folder is created in the `root` folder of the bucket, containing a YAML file for the pipeline. If you upload a new version of the same pipeline, a new YAML file with a different ID is added to the `/pipelines` folder.  
+
+When you run a pipeline, the artifacts are stored in the `/pipeline-name` folder in the `root` folder of the bucket.
 ====
 
+ifdef::upstream[]
+[IMPORTANT]
+====
+If you use an external MySQL database and upgrade to {productname-short} 2.10.0, the database is migrated to DSP 2.0 format, making it incompatible with earlier versions of {productname-short}.
+====
+endif::[]
+ifndef::upstream[]
+ifdef::self-managed[]
+[IMPORTANT]
+====
+If you use an external MySQL database and upgrade to {productname-short} 2.9, the database is migrated to DSP 2.0 format, making it incompatible with earlier versions of {productname-short}.
+====
+endif::[]
+ifdef::cloud-service[]
+[IMPORTANT]
+====
+If you use an external MySQL database and upgrade to {productname-short} with DSP 2.0, the database is migrated to DSP 2.0 format, making it incompatible with earlier versions of {productname-short}.
+====
+endif::[]
+endif::[]
+
 .Prerequisites
-* You have installed the OpenShift Pipelines operator.
 * You have logged in to {productname-long}.
 ifndef::upstream[]
 * If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group} ) in OpenShift.
@@ -22,21 +44,24 @@ ifdef::upstream[]
 endif::[]
 * You have created a data science project that you can add a pipeline server to.
 * You have an existing S3-compatible object storage bucket and you have configured write access to your S3 bucket on your storage account.
+* If you are configuring a pipeline server with an external MySQL database, your database must use MySQL version 5.x.
 
 .Procedure
 . From the {productname-short} dashboard, click *Data Science Projects*.
 +
-The *Data science projects* page opens.
+The *Data Science Projects* page opens.
 . Click the name of the project that you want to configure a pipeline server for.
 +
 A project details page opens.
-. In the *Pipelines* section, click *Configure a pipeline server*.
+. Click the *Pipelines* tab.
+. Click *Configure pipeline server*.
 +
 The *Configure pipeline server* dialog appears.
 . In the *Object storage connection* section, provide values for the mandatory fields:
 .. In the *Access key* field, enter the access key ID for the S3-compatible object storage provider.
 .. In the *Secret key* field, enter the secret access key for the S3-compatible object storage account that you specified.
 .. In the *Endpoint* field, enter the endpoint of your S3-compatible object storage bucket.
+.. In the *Region* field, enter the default region of your S3-compatible object storage account.
 .. In the *Bucket* field, enter the name of your S3-compatible object storage bucket.
 +
 [IMPORTANT]
@@ -52,11 +77,14 @@ If you specify incorrect data connection settings, you cannot update these setti
 ... In the *Username* field, enter the default user name that is connected to the database.
 ... In the *Password* field, enter the password for the default user account.
 ... In the *Database* field, enter the database name.
-. Click *Configure*.
+. Click *Configure pipeline server*.
 
 .Verification
-* The pipeline server that you configured is displayed in the *Pipelines* section on the project details page.
-* The *Import pipeline* button is available in the *Pipelines* section on the project details page.
+In the *Pipelines* tab for the project:
+
+* The *Import pipeline* button is available.
+* When you click the action menu (*&#8942;*) and then click *View pipeline server configuration*, the pipeline server details are displayed.
+
 
 //[role="_additional-resources"]
 //.Additional resources

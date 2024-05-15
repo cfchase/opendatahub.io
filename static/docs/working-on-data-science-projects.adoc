@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Working On Data Science Projects
-permalink: /docs/working-on-data-science-projects
+permalink: /docs/working_on_data_science_projects
 custom_css: asciidoc.css
 ---
 //:self-managed:
@@ -31,9 +31,6 @@ include::assemblies/working-with-data-science-pipelines.adoc[leveloffset=+1]
 
 :context: accelerators
 include::assemblies/working-with-accelerators.adoc[leveloffset=+1]
-
-:context: distributed-workloads
-include::assemblies/working-with-distributed-workloads.adoc[leveloffset=+1]
 
 include::modules/troubleshooting-common-problems-in-jupyter-for-administrators.adoc[leveloffset=+1]
 
