@@ -28,15 +28,47 @@ ifdef::upstream[]
 * You have enabled the required distributed workloads components as described in link:{odhdocshome}/working-with-distributed-workloads/#configuring-the-distributed-workloads-components_distributed-workloads[Configuring the distributed workloads components].
 endif::[]
 
+ifndef::upstream[]
+* You have created a data science project that contains a workbench, and the workbench is running a default notebook image that contains the CodeFlare SDK, for example, the *Standard Data Science* notebook. For information about how to create a project, see link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/working-on-data-science-projects_nb-server#creating-a-data-science-project_nb-server[Creating a data science project]. 
+endif::[]
+ifdef::upstream[]
+* You have created a data science project that contains a workbench, and the workbench is running a default notebook image that contains the CodeFlare SDK, for example, the *Standard Data Science* notebook. For information about how to create a project, see link:{odhdocshome}/working-on-data-science-projects/#_using_data_science_projects[Creating a data science project]. 
+endif::[]
+
 * You have sufficient resources. In addition to the base {productname-short} resources, you need 1.6 vCPU and 2 GiB memory to deploy the distributed workloads infrastructure.
 
+ifndef::upstream[]
 * The resources are physically available in the cluster.
 +
 [NOTE]
 ====
-{productname-short} currently supports only a single cluster queue per cluster (that is, homogenous clusters), and only empty resource flavors.
-For more information about Kueue resources, see the link:https://kueue.sigs.k8s.io/docs/concepts/[Kueue documentation].
+In {productname-short} {vernum}, {org-name} supports only a single cluster queue per cluster (that is, homogenous clusters), and only empty resource flavors.
+For more information about Kueue resources, see link:{rhoaidocshome}{default-format-url}/working_with_distributed_workloads/overview-of-distributed-workloads_distributed-workloads#overview-of-kueue-resources_distributed-workloads[Overview of Kueue resources].
 ====
+endif::[]
+ifdef::upstream[]
+* The resources are physically available in the cluster.
++
+[NOTE]
+====
+For more information about Kueue resources, see link:{odhdocshome}/working_with_distributed_workloads/#_overview-of-kueue-resources_distributed-workloads[Overview of Kueue resources].
+====
+endif::[]
+
+ifndef::upstream[]
+* If you want to use graphics processing units (GPUs), you have enabled GPU support in {productname-short}.
+See link:{rhoaidocshome}{default-format-url}/managing_resources/managing-cluster-resources_cluster-mgmt#enabling-gpu-support_cluster-mgmt[Enabling GPU support in {productname-short}].
++
+[NOTE]
+====
+In {productname-short} {vernum}, {org-name} supports only NVIDIA GPU accelerators for distributed workloads.
+====
+endif::[]
+ifdef::upstream[]
+* If you want to use graphics processing units (GPUs), you have enabled GPU support.
+This process includes installing the Node Feature Discovery Operator and the NVIDIA GPU Operator.
+For more information, see https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/index.html[NVIDIA GPU Operator on {org-name} OpenShift Container Platform^] in the NVIDIA documentation.
+endif::[]
 
 
 .Procedure
@@ -94,10 +126,11 @@ spec:
 .. Replace the example quota values (9 CPUs, 36 GiB memory, and 5 NVIDIA GPUs) with the appropriate values for your cluster queue.
 The cluster queue will start a distributed workload only if the total required resources are within these quota limits.
 +
-[NOTE]
-====
-In this release of {productname-short}, the only accelerators supported for distributed workloads are NVIDIA GPUs.
-====
+You must specify a quota for each resource that the user can request, even if the requested value is 0, by updating the `spec.resourceGroups` section as follows:
+
+* Include the resource name in the `coveredResources` list.
+* Specify the resource `name` and `nominalQuota` in the `flavors.resources` section, even if the `nominalQuota` value is 0.
+
 .. Apply the configuration to create the `cluster-queue` object:
 +
 [source,bash]

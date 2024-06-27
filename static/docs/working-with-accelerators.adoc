@@ -1,0 +1,40 @@
+---
+layout: docs
+title: Working with accelerators
+permalink: /docs/working-with-accelerators
+custom_css: asciidoc.css
+---
+//:self-managed:
+:upstream:
+include::_artifacts/document-attributes-global.adoc[]
+
+
+:doctype: book
+:toc: left
+:compat-mode:
+:context: accelerators
+
+= Working with accelerators
+
+Use accelerators, such as NVIDIA GPUs and Habana Gaudi devices, to optimize the performance of your end-to-end data science workflows. 
+
+include::modules/overview-of-accelerators.adoc[leveloffset=+1]
+
+include::modules/working-with-accelerator-profiles.adoc[leveloffset=+1]
+
+include::modules/creating-an-accelerator-profile.adoc[leveloffset=+2]
+
+include::modules/updating-an-accelerator-profile.adoc[leveloffset=+2]
+
+include::modules/deleting-an-accelerator-profile.adoc[leveloffset=+2]
+
+include::modules/viewing-accelerator-profiles.adoc[leveloffset=+2]
+
+include::modules/configuring-a-recommended-accelerator-for-notebook-images.adoc[leveloffset=+2]
+
+include::modules/configuring-a-recommended-accelerator-for-serving-runtimes.adoc[leveloffset=+2]
+
+include::modules/habana-gaudi-integration.adoc[leveloffset=+1]
+
+include::modules/enabling-habana-gaudi-devices.adoc[leveloffset=+2]
+
