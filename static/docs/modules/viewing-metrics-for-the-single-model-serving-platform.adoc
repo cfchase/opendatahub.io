@@ -9,7 +9,7 @@ When a cluster administrator has configured monitoring for the single-model serv
 .Prerequisites
 ifdef::self-managed[]
 * A cluster administrator has configured monitoring for the single-model serving platform.
-* You have been link:https://docs.openshift.com/container-platform/{ocp-latest-version}/monitoring/enabling-monitoring-for-user-defined-projects.html#granting-users-permission-to-monitor-user-defined-projects_enabling-monitoring-for-user-defined-projects[assigned^] the `monitoring-rules-view` role.
+* You have been link:https://docs.openshift.com/container-platform/{ocp-latest-version}/observability/monitoring/enabling-monitoring-for-user-defined-projects.html#granting-users-permission-to-monitor-user-defined-projects_enabling-monitoring-for-user-defined-projects[assigned^] the `monitoring-rules-view` role.
 * You are familiar with how to link:https://access.redhat.com/documentation/en-us/openshift_container_platform/{ocp-latest-version}/html/building_applications/odc-monitoring-project-and-application-metrics-using-developer-perspective#odc-monitoring-your-project-metrics_monitoring-project-and-application-metrics-using-developer-perspective[monitor project metrics^] in the {openshift-platform} web console.
 endif::[]
 ifdef::cloud-service[]
@@ -42,6 +42,13 @@ sum(increase(vllm:request_success_total{namespace='${namespace}',model_name='${m
 sum(increase(tgi_request_success{namespace=${namespace}, pod=~'${model_name}-predictor-.*'}[${rate_interval}]))
 ----
 
+.. The following query displays the number of successful inference requests over a period of time for a model deployed with the Caikit Standalone runtime:
++
+[source,subs="+quotes"]
+----
+sum(increase(predict_rpc_count_total{namespace='${namespace}',code='OK',model_id='${model_name}'}[${rate_interval}]))
+----
+
 .. The following query displays the number of successful inference requests over a period of time for a model deployed with the OpenVINO Model Server runtime:
 +
 [source,subs="+quotes"]
@@ -67,7 +74,14 @@ sum(increase(vllm:request_success_total{namespace='${namespace}',model_name='${m
 sum(increase(tgi_request_success{namespace=${namespace}, pod=~'${model_name}-predictor-.*'}[${rate_interval}]))
 ----
 
-.. The following query displays the number of successful inference requests over a periof of time for a model deployed with the OpenVINO Model Server runtime:
+.. The following query displays the number of successful inference requests over a period of time for a model deployed with the Caikit Standalone runtime:
++
+[source,subs="+quotes"]
+----
+sum(increase(predict_rpc_count_total{namespace='${namespace}',code='OK',model_id='${model_name}'}[${rate_interval}]))
+----
+
+.. The following query displays the number of successful inference requests over a period of time for a model deployed with the OpenVINO Model Server runtime:
 +
 [source,subs="+quotes"]
 ----

@@ -19,10 +19,10 @@ endif::[]
 
 Develop and train a model in your workbench IDE::
 ifndef::upstream[]
-link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/working-in-your-data-science-ide[Working in your data science IDE]
+link:{rhoaidocshome}{default-format-url}/working_in_your_data_science_ide/[Working in your data science IDE]
 endif::[]
 ifdef::upstream[]
-link:{odhdocshome}/working-on-data-science-projects/#working-in-your-data-science-ide_ide[Working in your data science IDE]
+link:{odhdocshome}/working-in-your-data-science-ide/[Working in your data science IDE]
 endif::[]
 +
 Learn how to access your workbench IDE (JupyterLab, code-server, or RStudio Server).
@@ -36,10 +36,10 @@ For the JupyterLab IDE, learn about the following tasks:
 
 Automate your ML workflow with pipelines::
 ifndef::upstream[]
-link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/working-with-data-science-pipelines_ds-pipelines[Working with data science pipelines]
+link:{rhoaidocshome}{default-format-url}/working_with_data_science_pipelines/[Working with data science pipelines]
 endif::[]
 ifdef::upstream[]
-link:{odhdocshome}/working-on-data-science-projects/#working-with-data-science-pipelines_ds-pipelines[Working with data science pipelines]
+link:{odhdocshome}/working-with-data-science-pipelines/[Working with data science pipelines]
 endif::[]
 +
 Enhance your data science projects on {productname-short} by building portable machine learning (ML) workflows with data science pipelines, by using Docker containers. Use pipelines for continuous retraining and updating of a model based on newly received data. 
@@ -72,7 +72,7 @@ ifdef::upstream[]
 link:{odhdocshome}/working-with-accelerators/[Working with accelerators]
 endif::[]
 +
-If you work with large data sets, you can use accelerators, such as NVIDIA GPUs and Habana Gaudi devices, to optimize the performance of your data science models in {productname-short}. With accelerators, you can scale your work, reduce latency, and increase productivity. 
+If you work with large data sets, you can use accelerators, such as NVIDIA GPUs and Intel Gaudi AI accelerators, to optimize the performance of your data science models in {productname-short}. With accelerators, you can scale your work, reduce latency, and increase productivity. 
 
 Implement distributed workloads for higher performance::
 ifndef::upstream[]
