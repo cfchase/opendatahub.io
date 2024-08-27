@@ -4,13 +4,11 @@
 = Deleting a bias metric by using the CLI
 
 [role='_abstract']
-The following procedure describes how to use the OpenShift command-line interface (CLI) to delete a bias metric for a model.
+You can use the OpenShift command-line interface (CLI) to delete a bias metric for a model.
 
 .Prerequisites
 
-* You have logged in to {productname-long}.
-
-* There is an existing bias metric that you want to delete.
+* You have installed the OpenShift CLI (`oc`).
 
 ifndef::upstream[]
 * You have a user token for authentication as described in link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/authenticating-trustyai-service_monitor[Authenticating the TrustyAI service].
@@ -19,20 +17,39 @@ ifdef::upstream[]
 * You have a user token for authentication as described in link:{odhdocshome}/monitoring-data-science-models/#authenticating-trustyai-service_monitor[Authenticating the TrustyAI service].
 endif::[]
 
+* There is an existing bias metric that you want to delete.
+
 .Procedure
 
-. In a terminal window, log in to the OpenShift cluster where {productname-short} is deployed.
+. Open a new terminal window.
+. Follow these steps to log in to your {openshift-platform} cluster:
+.. In the upper-right corner of the OpenShift web console, click your user name and select *Copy login command*. 
+.. After you have logged in, click *Display token*.
+.. Copy the *Log in with this token* command and paste it in the OpenShift command-line interface (CLI).
 +
+[source,subs="+quotes"]
 ----
-oc login
+$ oc login --token=__<token>__ --server=__<openshift_cluster_url>__
 ----
 
-.  Optional: To list all currently active requests for a metric, use `GET /metrics/{{metric}}/requests`. For example, to list all currently scheduled SPD metrics, type:
+. In the OpenShift CLI, get the route to the TrustyAI service: 
++
+[source]
+----
+TRUSTY_ROUTE=https://$(oc get route/trustyai-service --template={{.spec.host}})
+----
+
+. Optional: To list all currently active requests for a metric, use `GET /metrics/{{metric}}/requests`. For example, to list all currently scheduled SPD metrics, type:
 +
 ----
 curl -H "Authorization: Bearer $TOKEN" -X GET --location "$TRUSTY_ROUTE/metrics/spd/requests"
 ----
-
++
+Alternatively, to list all currently scheduled metric requests, use `GET /metrics/all/requests`. 
++
+----
+curl -H "Authorization: Bearer $TOKEN" -X GET --location "$TRUSTY_ROUTE/metrics/all/requests"
+----
 . To delete a metric, send an HTTP `DELETE` request to the `/metrics/$METRIC/request` endpoint to stop the periodic calculation, including the id of periodic task that you want to cancel in the payload. For example:
 +
 ----

@@ -47,11 +47,13 @@ endif::[]
 
 ifndef::upstream[]
 * If you want to use graphics processing units (GPUs), you have enabled GPU support in {productname-short}.
-See link:{rhoaidocshome}{default-format-url}/managing_resources/managing-cluster-resources_cluster-mgmt#enabling-gpu-support_cluster-mgmt[Enabling GPU support in {productname-short}].
+See link:{rhoaidocshome}{default-format-url}/managing_resources/managing-cluster-resources_cluster-mgmt#enabling-nvidia-gpus_cluster-mgmt[Enabling NVIDIA GPUs].
 +
 [NOTE]
 ====
-In {productname-short} {vernum}, {org-name} supports only NVIDIA GPU accelerators for distributed workloads.
+In {productname-short} {vernum}, for distributed workloads, {org-name} supports only NVIDIA GPU accelerators.
+{org-name} supports the use of accelerators within the same cluster only. 
+{org-name} does not support remote direct memory access (RDMA) between accelerators, or the use of accelerators across a network, for example, by using technology such as NVIDIA GPUDirect or NVLink.
 ====
 endif::[]
 ifdef::upstream[]
