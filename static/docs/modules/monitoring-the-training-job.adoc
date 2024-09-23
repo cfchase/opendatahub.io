@@ -9,12 +9,6 @@ The example training job in this section is based on the IBM and Hugging Face tu
 
 
 .Prerequisites
-ifdef::upstream,self-managed[]
-* You have logged in to {openshift-platform} with the `cluster-admin` role.
-endif::[]
-ifdef::cloud-service[]
-* You have logged in to OpenShift with the `cluster-admin` role.
-endif::[]
 
 ifndef::upstream[]
 * You have access to a data science cluster that is configured to run distributed workloads as described in link:{rhoaidocshome}{default-format-url}/working_with_distributed_workloads/configuring-distributed-workloads_distributed-workloads[Configuring distributed workloads].
@@ -55,9 +49,9 @@ ifdef::cloud-service[]
 endif::[]
 . Click *Workloads* -> *Pods*.
 
-. Search for the pod that corresponds to the PyTorch job, that is, *_<project-name>_-demo-master-0*.
+. Search for the pod that corresponds to the PyTorch job, that is, *_<training-job-name>_-master-0*.
 +
-For example, if the project name is `kfto`, the pod name is *kfto-demo-master-0*.
+For example, if the training job name is `kfto-demo`, the pod name is *kfto-demo-master-0*.
 
 . Click the pod name to open the pod details page.
 
@@ -80,7 +74,7 @@ For example, if the project name is `kfto`, the pod name is *kfto-demo-master-0*
 In the example output, the solid blocks indicate progress bars.
 
 .Verification
-. The *_<project-name>_-demo-master-0* pod is running.
+. The *_<training-job-name>_-master-0* pod is running.
 . The *Logs* tab provides information about the job progress and job status.
 
 ////
