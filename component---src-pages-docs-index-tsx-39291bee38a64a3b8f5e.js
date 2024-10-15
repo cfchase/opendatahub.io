@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkopendatahub_io=self.webpackChunkopendatahub_io||[]).push([[347],{3507:function(e,t,a){a.r(t);var u=a(7294),n=a(1883);t.default=()=>((0,u.useEffect)((()=>{(0,n.navigate)("/docs/getting-started-with-open-data-hub")}),[]),null)}}]);
+//# sourceMappingURL=component---src-pages-docs-index-tsx-39291bee38a64a3b8f5e.js.map
