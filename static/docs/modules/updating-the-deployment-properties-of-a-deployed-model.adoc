@@ -9,22 +9,23 @@ You can update the deployment properties of a model that has been deployed previ
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have deployed a model on {productname-short}.
 
 .Procedure
-. From the {productname-short} dashboard, click *Model serving*.
+. From the {productname-short} dashboard, click *Model Serving*.
 +
 The *Deployed models* page opens.
 . Click the action menu (*&#8942;*) beside the model whose deployment properties you want to update and click *Edit*.
 +
-The *Deploy model* dialog opens.
+The *Edit model* dialog opens.
 . Update the deployment properties of the model as follows:
-.. In the *Model Name* field, enter a new, unique name for the model.
+.. In the *Model name* field, enter a new, unique name for your model.
+.. From the *Model servers* list, select a model server for your model.
 .. From the *Model framework* list, select a framework for your model. 
 +
 NOTE: The *Model framework* list shows only the frameworks that are supported by the model-serving runtime that you specified when you configured your model server.
@@ -45,7 +46,7 @@ NOTE: The *Model framework* list shows only the frameworks that are supported by
 ... In the *Path* field, update the folder path in your S3-compatible object storage that contains your data file. 
 --
 
-.. Click *Deploy*.
+.. Click *Redeploy*.
 
 .Verification
 * The model whose deployment properties you updated is displayed on the *Model Serving* page of the dashboard.

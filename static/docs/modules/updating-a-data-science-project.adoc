@@ -4,15 +4,15 @@
 = Updating a data science project
 
 [role='_abstract']
-You can update your data science project's details by changing your project's name and description text.
+You can update the project details by changing the project name and description.
 
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have created a data science project.
 
@@ -22,13 +22,13 @@ endif::[]
 The *Data Science Projects* page opens.
 . Click the action menu (*&#8942;*) beside the project whose details you want to update and click *Edit project*.
 +
-The *Edit data science project* dialog opens.
-. Optional: Update the *name* for your data science project.
-. Optional: Update the *description* for your data science project.
+The *Edit project* dialog opens.
+. Optional: Edit the *Name* field to change the display name for your project.
+. Optional: Edit the *Description* field to change the description of your project.
 . Click *Update*.
 
 .Verification
-* The data science project that you updated is displayed on the *Data Science Projects* page.
+* You can see the updated project details on the *Data Science Projects* page.
 
 //[role='_additional-resources']
 //.Additional resources

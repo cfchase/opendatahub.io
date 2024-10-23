@@ -20,7 +20,7 @@ NOTE: Changing the PVC setting restarts the Jupyter pod and makes Jupyter unavai
 
 .Procedure
 . From the {productname-short} dashboard, click *Settings* -> *Cluster settings*.
-. Under *PVC size*, enter a new size in gibibytes. The minimum size is 1 GiB, and the maximum size is 16384 GiB.
+. Under *PVC size*, enter a new size in gibibytes or mebibytes.
 . Click *Save changes*.
 
 .Verification
@@ -28,5 +28,4 @@ NOTE: Changing the PVC setting restarts the Jupyter pod and makes Jupyter unavai
 
 [role='_additional-resources']
 .Additional resources
-* link:https://docs.openshift.com/container-platform/{ocp-latest-version}/storage/understanding-persistent-storage.html[Understanding persistent storage]
-//TEST
+* link:https://docs.redhat.com/en/documentation/openshift_container_platform/{ocp-latest-version}/html/storage/understanding-persistent-storage[Understanding persistent storage]

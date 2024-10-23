@@ -9,10 +9,10 @@ For data science projects that require data to be retained, you can add cluster 
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have created a data science project that you can add cluster storage to.
 
@@ -26,12 +26,16 @@ A project details page opens.
 . Click the *Cluster storage* tab.
 . Click *Add cluster storage*.
 +
-The *Add storage* dialog opens.
-. Enter a *name* for the cluster storage.
-. Enter a *description* for the cluster storage.
-. Under *Persistent storage size*, enter a new size in gibibytes. The minimum size is 1 GiB, and the maximum size is 16384 GiB.
-. Optional: Select a *workbench* from the list to connect the cluster storage to an existing workbench.
-. If you selected a workbench to connect the storage to, enter the storage directory in the *Mount folder* field.
+The *Add cluster storage* dialog opens.
+. In the *Name* field, enter a unique name for the cluster storage.
+. Optional: In the *Description* field, enter a description for the cluster storage.
+. Optional: From the *Storage class* list, select the type of cluster storage.
++
+NOTE: You cannot change the storage class after you add the cluster storage to the project.
+. In the *Persistent storage size* section, specify a new size in gibibytes or mebibytes.
+. Optional: If you want to connect the cluster storage to an existing workbench:
+.. From the *Connected workbench* list, select a workbench.
+.. In the *Mount folder name* field, enter the name of storage directory.
 . Click *Add storage*.
 
 .Verification

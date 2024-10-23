@@ -7,7 +7,7 @@ You can build your own custom image. However, you must make sure that your image
 
 .Additional resources
 
-* link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/images/creating-images#images-create-guide-general_create-images[General Container image guidelines section] in the OpenShift Container Platform Images documentation.
+* link:https://docs.redhat.com/en/documentation/openshift_container_platform/{ocp-latest-version}/html/images/creating-images#images-create-guide-general_create-images[General Container image guidelines section] in the OpenShift Container Platform Images documentation.
 
 * Red Hat Universal Base Image: https://catalog.redhat.com/software/base-images
 
@@ -23,11 +23,11 @@ In OpenShift, your container will run with a random UID and a GID of `0`. Make s
 
 *Avoid placing artifacts in $HOME*
 
-The persistent volume attached to the workbench will be mounted on `/opt/app-root/src`. This location is also the location of `$HOME`. Therefore, do not put any files or other resources directly in `$HOME` because they won’t be visible after the workbench is deployed (and the persistent volume is mounted).
+The persistent volume attached to the workbench will be mounted on `/opt/app-root/src`. This location is also the location of `$HOME`. Therefore, do not put any files or other resources directly in `$HOME` because they won't be visible after the workbench is deployed (and the persistent volume is mounted).
 
 *Specifying the API endpoint*
 
-OpenShift readiness and liveness probes will query the `/api` endpoint. For a Jupyter IDE, this is the default endpoint. For other IDEs, you must specify the `/api` endpoint. 
+OpenShift readiness and liveness probes will query the `/api` endpoint. For a Jupyter IDE, this is the default endpoint. For other IDEs, you must implement the `/api` endpoint. 
 
 == Advanced guidelines for creating your own workbench image
 
@@ -35,7 +35,7 @@ The following guidelines provide information to consider when you build your own
 
 *Minimizing image size*
 
-A notebook image uses a "layered" file system. Every time you use a COPY or a RUN command in your notebook image file, a new layer is created. Artifacts are not deleted. When you remove an artifact, for example , a file,, it is "masked" in the next layer. Therefore, consider the following guidelines when you create your notebook image file.
+A notebook image uses a "layered" file system. Every time you use a COPY or a RUN command in your notebook image file, a new layer is created. Artifacts are not deleted. When you remove an artifact, for example, a file, it is "masked" in the next layer. Therefore, consider the following guidelines when you create your notebook image file.
 
 * Avoid using the `dnf update` command. 
 
@@ -68,7 +68,7 @@ COPY --chmod=775 os-packages.txt ./
 WORKDIR /opt/app-root/src
 ----
 +
-When a user launches a workbench from the {productname-short}*Applications* -> *Enabled* page, the "personal" volume of the user is mounted at `/opt/app-root/src`. Because this location is not configurable, when you build your custom image, you must specify this default location for persisted data.
+When a user launches a workbench from the {productname-short} *Applications* -> *Enabled* page, the "personal" volume of the user is mounted at `/opt/app-root/src`. Because this location is not configurable, when you build your custom image, you must specify this default location for persisted data.
 
 * Fix permissions to support PIP (the package manager for Python packages) in OpenShift environments. Add the following command to your custom image (if needed, change `python3.9` to the Python version that you are using):
 +
@@ -147,15 +147,9 @@ If you want your custom image to support data science pipelines V2, you must add
 * Include the `odh-elyra` package for having support with Data Science pipeline V2 (not the `elyra` package), for example:
 +
 ----
- FROM quay.io/modh/odh-pytorch-notebook@sha256:b68e0…
-
- USER 0
-
- RUN INSTALL_PKGS="odh-elyra" && \
-    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
-    yum -y clean all --enablerepo='*'
-
  USER 1001
+ 
+ RUN pip install odh-elyra
 ----
 
 * If you want to include the data science pipeline configuration automatically, as a runtime configuration, add an annotation when you import a custom workbench image. 

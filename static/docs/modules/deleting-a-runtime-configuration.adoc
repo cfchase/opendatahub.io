@@ -9,15 +9,15 @@ After you have finished using your runtime configuration, you can delete it from
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have created a data science project that contains a workbench.
 * You have created and configured a pipeline server within the data science project that contains your workbench.
 * A previously created runtime configuration is visible in the JupyterLab interface.
-* You have created and launched a Jupyter server from a notebook image that contains the Elyra extension (Standard data science, TensorFlow, TrustyAI, PyTorch, or HabanaAI).
+* You have created and launched a Jupyter server from a notebook image that contains the Elyra extension (Standard data science, TensorFlow, TrustyAI, or PyTorch).
 
 .Procedure
 . In the left sidebar of JupyterLab, click *Runtimes* (image:images/jupyter-runtimes-sidebar.png[The Runtimes icon]).

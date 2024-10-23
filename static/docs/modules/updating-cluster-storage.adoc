@@ -6,13 +6,23 @@
 [role='_abstract']
 If your data science work requires you to change the identifying information of a project's cluster storage or the workbench that the storage is connected to, you can update your project's cluster storage to change these properties.
 
+////
+NOTE: You cannot directly change the *storage class* for cluster storage that is already configured for a workbench or project. To switch to a different storage class, you need to migrate your data to a new cluster storage instance that uses the required storage class. 
+ifndef::upstream[]
+For more information, see link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/configuring-cluster-storage_projects#changing-the-storage-class-for-an-existing-cluster-storage-instance_projects[Changing the storage class for an existing cluster storage instance].
+endif::[]
+ifdef::upstream[]
+For more information, see link:{odhdocshome}/working-on-data-science-projects/#changing-the-storage-class-for-an-existing-cluster-storage-instance_projects[Changing the storage class for an existing cluster storage instance].
+endif::[]
+////
+
 .Prerequisites
 * You have logged in to {productname-long}.
 ifndef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {oai-user-group} or {oai-admin-group}) in OpenShift.
 endif::[]
 ifdef::upstream[]
-* If you are using specialized {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
+* If you are using {productname-short} groups, you are part of the user group or admin group (for example, {odh-user-group} or {odh-admin-group}) in OpenShift.
 endif::[]
 * You have created a data science project that contains cluster storage.
 
@@ -26,16 +36,16 @@ A project details page opens.
 . Click the *Cluster storage* tab.
 . Click the action menu (*&#8942;*) beside the storage that you want to update and then click *Edit storage*.
 +
-The *Edit storage* page opens.
-. Update the storage's properties.
-.. Update the *name* for the storage, if applicable.
-.. Update the *description* for the storage, if applicable.
-.. Increase the *Persistent storage size* for the storage, if applicable.
+The *Update cluster storage* page opens.
+. Optional: Edit the *Name* field to change the display name for your storage.
+. Optional: Edit the *Description* field to change the description of your storage.
+. Optional: In the *Persistent storage size* section, specify a new size in gibibytes or mebibytes.
 +
 Note that you can only increase the storage size. Updating the storage size restarts the workbench and makes it unavailable for a period of time that is usually proportional to the size change.
-.. Update the *workbench* that the storage is connected to, if applicable.
-.. If you selected a new workbench to connect the storage to, enter the storage directory in the *Mount folder* field.
-. Click *Update storage*.
+. Optional: If you want to connect the cluster storage to a different workbench:
+.. From the *Connected workbench* list, select the workbench.
+.. In the *Mount folder name* field, enter the name of storage directory.
+. Click *Update*.
 
 If you increased the storage size, the workbench restarts and is unavailable for a period of time that is usually proportional to the size change.
 
