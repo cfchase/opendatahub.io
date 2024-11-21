@@ -5,7 +5,8 @@
 
 [role='_abstract']
 
-If you have a relational database in your {openshift-platform} cluster such as MySQL or MariaDB, you can configure TrustyAI to use your database instead of a persistent volume claim (PVC). Using a database instead of a PVC for storage can improve scalability, performance, and data management in TrustyAI.
+If you have a relational database in your {openshift-platform} cluster such as MySQL or MariaDB, you can configure TrustyAI to use your database instead of a persistent volume claim (PVC). Using a database instead of a PVC for storage can improve scalability, performance, and data management in TrustyAI. 
+Provide TrustyAI with a database configuration secret before deployment. You can create a secret or specify the name of an existing Kubernetes secret within your project. 
 
 .Prerequisites
 
@@ -13,19 +14,26 @@ If you have a relational database in your {openshift-platform} cluster such as M
 
 * You have downloaded and installed the OpenShift command-line interface (CLI). See link:https://docs.redhat.com/en/documentation/openshift_container_platform/{ocp-latest-version}/html/cli_tools/openshift-cli-oc#installing-openshift-cli[Installing the OpenShift CLI^].
 
-* You have enabled the TrustyAI component, as described in link:{odhdocshome}/monitoring-data-science-models/#enabling-trustyai-component_monitor[Enabling the TrustyAI component].
-
 ifndef::upstream[]
+* You have enabled the TrustyAI component, as described in link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/configuring-trustyai_monitor#enabling-trustyai-component_monitor[Enabling the TrustyAI component].
+
 * The data scientist has created a data science project, as described in link:{rhoaidocshome}{default-format-url}/working_on_data_science_projects/using-data-science-projects_projects#creating-a-data-science-project_projects[Creating a data science project], that contains the models that the data scientist wants to monitor.  
 endif::[]
 
 ifdef::upstream[]
+* You have enabled the TrustyAI component, as described in link:{odhdocshome}/monitoring-data-science-models/#enabling-trustyai-component_monitor[Enabling the TrustyAI component].
+
 * The data scientist has created a data science project, as described in link:{odhdocshome}/working-on-data-science-projects/#creating-a-data-science-project_projects[Creating a data science project], that contains the models that the data scientist wants to monitor.  
 endif::[]
 
 * If you are configuring the TrustyAI service with an external MySQL database, your database must already be in your cluster and use at least MySQL version 5.x. However, {org-name} recommends that you use MySQL version 8.x. 
 
 * If you are configuring the TrustyAI service with a MariaDB database, your database must already be in your cluster and use MariaDB version 10.3 or later. However, {org-name} recommends that you use at least MariaDB version 10.5.
+
+[NOTE]
+--
+The transport security layer (TLS) protocol does not work with the MariaDB operator 0.29 or later versions.
+--
 
 .Procedure
 
@@ -64,7 +72,7 @@ data:
 $ oc apply -f __<service_name>__-db-tls.yaml -n __<project_name>__
 ----
 
-. Create a secret that has your database credentials.
+. Create a secret (or specify an existing one) that has your database credentials.
 
 .. Create a YAML file to contain your secret and add the following code:
 +
@@ -76,7 +84,7 @@ metadata:
   name: db-credentials
 type: Opaque
 stringData:
-  databaseKind: __<mariadb or mysql>__ <1>
+  databaseKind: __<mariadb>__ <1>
   databaseUsername: __<TrustyAI_username>__ <2>
   databasePassword: __<TrustyAI_password>__ <3>
   databaseService: mariadb-service <4>
@@ -85,13 +93,13 @@ stringData:
   databaseName: trustyai_service <7>
 ----
 +
-<1> The database kind, either `mariadb` or `mysql`.
+<1> The only currently supported `databaseKind` value is `mariadb`.
 <2> The username you want TrustyAI to use when interfacing with the database.
-<3> The password for the database username.
-<4> The Kubernetes (K8s) service through which your database is accessed.
-<5> The port the database is listening on.
-<6> The setting for the link:https://quarkus.io/guides/hibernate-orm#quarkus-hibernate-orm_quarkus-hibernate-orm-database-generation[`quarkus.hibernate-orm.database.generation`] argument, which determines how TrustyAI interacts with the database on its initial connection. Set to `none`, `create`, `drop-and-create`, `drop`, `update`, or `validate`. 
-<7> The name of the individual database within the database service that the username and password authenticate to.
+<3> The password that TrustyAI must use when connecting to the database.
+<4> The Kubernetes (K8s) service that TrustyAI must use when connecting to the database (the default `mariadb`) .
+<5> The port that TrustyAI must use when connecting to the database (default is 3306).
+<6>  The database schema generation strategy to be used by TrustyAI. It is the setting for the link:https://quarkus.io/guides/hibernate-orm#quarkus-hibernate-orm_quarkus-hibernate-orm-database-generation[`quarkus.hibernate-orm.database.generation`] argument, which determines how TrustyAI interacts with the database on its initial connection. Set to `none`, `create`, `drop-and-create`, `drop`, `update`, or `validate`. 
+<7> The name of the individual database within the database service that the username and password authenticate to, as well as the specific database name that TrustyAI should read and write to on the database server.
 
 .. Save the file with the file name *db-credentials.yaml*. You will need this name later when you install or change the TrustyAI service.
 
@@ -101,8 +109,12 @@ stringData:
 ----
 $ oc apply -f db-credentials.yaml -n __<project_name>__
 ----
-
-. If you are installing TrustyAI for the first time on a project, continue to _Installing the TrustyAI service by using the CLI_.
+ifndef::upstream[]
+. If you are installing TrustyAI for the first time on a project, continue to link:{rhoaidocshome}{default-format-url}/monitoring_data_science_models/configuring-trustyai_monitor#installing-trustyai-service_monitor[Installing the TrustyAI service for a project].
+endif::[]
+ifdef::upstream[]
+. If you are installing TrustyAI for the first time on a project, continue to link:{odhdocshome}/monitoring-data-science-models/#installing-trustyai-service_monitor[Installing the TrustyAI service for a project].
+endif::[]
 +
 If you already installed TrustyAI on a project, you can migrate the existing TrustyAI service from using a PVC to using a database.
 
