@@ -4,8 +4,23 @@ title: Release Notes
 permalink: /docs/roadmap/release-notes
 style_class: release-notes
 ---
+### [Open Data Hub version v2.19.0](../../blog/2024-10-08-odh-release-2.19.0-blog) - Oct 2024
 
-### [Open Data Hub version v1.7.0](../../blog/2023-06-28-odh-release-1.7.0-blog) - June 2023
+Check out blog for detail changelist
+
+### [Open Data Hub version v2.18.2](../../blog/2024-09-25-odh-release-2.18.2-blog) - Sep 2024
+
+Check out blog for detail changelist
+
+### [Open Data Hub version v2.4.0](../../blog/2023-11-03-odh-release-2.4.0-blog) - Nov 2023
+
+Check out blog for detail changelist
+
+### [Open Data Hub version v2.0.0](../../blog/2023-07-24-odh-operator-v2.0-blog) - Jul 2023
+
+Check out blog for detail changelist
+
+### [Open Data Hub version v1.7.0](../../blog/2023-06-28-odh-release-1.7.0-blog) - Jun 2023
 
 | Technology                                                                         | Version |
 | ---------------------------------------------------------------------------------- | ------- |  |

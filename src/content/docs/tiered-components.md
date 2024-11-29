@@ -47,6 +47,10 @@ All components/projects will be required to designate dedicated maintainers/owne
   * Default ODH notebook images
   * ODH Dashboard
   * Data Science Pipelines
+  * Kserve
+  * CodeFlare Operator
+  * Kueue
+  * KubeRay
   * [https://opendatahub.io](https://opendatahub.io)
 
 #### ODH Incubating (Tier 1) - opendatahub-io

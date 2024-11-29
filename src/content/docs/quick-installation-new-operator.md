@@ -84,6 +84,9 @@ the Location colum of the `odh-dashboard` route.
    1. Red Hat OpenShift Serverless Operator from "Red Hat" catalog.
    2. Red Hat OpenShift Service Mesh Operator from "Red Hat" catalog.
 
+- to use "kserve" component, with authentication, user need to install Authorino oprator via OperatorHub before create DSCI CR
+   1. Authorino Operator from "Red Hat" catalog.
+
 - to use "datasciencepipeline" component, users are required to install one operator via OperatorHub before enable it in DataScienceCluster CR
    1. Red Hat OpenShift Pipelines Operator from "Red Hat" catalog.
 
