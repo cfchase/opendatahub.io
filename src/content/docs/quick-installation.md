@@ -62,7 +62,7 @@ The Open Data Hub operator will create new Open Data Hub deployments and manage 
 1. Verify the installation by viewing the project workload.  The [ODH Core components](../tiered-components) should be running.
    ![Verify Status](../assets/img/pages/docs/quick-installation/verify-install.png "Verify Status")
 
-   If you Create an Instance that is not under`odh` a fatal error similar to "csv created in namespace with multiple operatorgroups, can't pick one automatically" will be raised.
+   If you Create an Instance that is not under `odh` a fatal error similar to "csv created in namespace with multiple operatorgroups, can't pick one automatically" will be raised.
    ![Change Namespace to 'odh'](../assets/img/pages/docs/quick-installation/installed-operators-change-namespace.png "Change Namespace to 'odh'")
 
 ### Open Data Hub Dashboard
